@@ -10,12 +10,17 @@ public class CreationFrame extends JFrame implements ActionListener {
 	private JCheckBox vera[];
 	private String testo = "";
 	private int cont=0;
+	private JComboBox mat;
+
 
 	public CreationFrame() {
 		super("Creazione Quesiti");
 
 		Container c = this.getContentPane();
-		JPanel p = new JPanel(new GridLayout(5, 1));
+		
+		
+		
+		JPanel p = new JPanel(new GridLayout(6, 1));
 		JPanel pDom = new JPanel();
 		JPanel pRisp[] = new JPanel[4];
 		JPanel pPuls = new JPanel();
@@ -32,6 +37,19 @@ public class CreationFrame extends JFrame implements ActionListener {
 		add = new JButton("Aggiungi domanda");
 		fine = new JButton("Fine");
 		dom = new JTextField("Domanda?", 16);
+		
+		JPanel pmat=new JPanel();
+		mat=new JComboBox();
+		mat.addItem("Matematica");
+		mat.addItem("Italiano");
+		mat.addItem("Storia");
+		mat.addItem("Informatica");
+		mat.addItem("Sistemi");
+		mat.addItem("Inglese");
+		
+		
+		
+		pmat.add(mat);
 
 		pDom.add(dom);
 		pPuls.add(add);
@@ -42,6 +60,7 @@ public class CreationFrame extends JFrame implements ActionListener {
 		p.add(pRisp[1]);
 		p.add(pRisp[2]);
 		p.add(pRisp[3]);
+		p.add(pmat);
 
 		c.add(p);
 		c.add(pPuls, "South");
